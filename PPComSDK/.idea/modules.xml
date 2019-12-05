@@ -3,8 +3,11 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/PPComSDK.iml" filepath="$PROJECT_DIR$/PPComSDK.iml" />
+      <module fileurl="file://$PROJECT_DIR$/app/PPComSDK-app.iml" filepath="$PROJECT_DIR$/app/PPComSDK-app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ppcomsdk/PPComSDK-ppcomsdk.iml" filepath="$PROJECT_DIR$/ppcomsdk/PPComSDK-ppcomsdk.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/ppcomsdk/ppcomsdk.iml" filepath="$PROJECT_DIR$/ppcomsdk/ppcomsdk.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../PPMessageSDK/sdk/sdk.iml" filepath="$PROJECT_DIR$/../PPMessageSDK/sdk/sdk.iml" />
     </modules>
   </component>
 </project>
