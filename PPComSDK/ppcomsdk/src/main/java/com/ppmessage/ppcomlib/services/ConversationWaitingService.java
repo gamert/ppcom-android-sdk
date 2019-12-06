@@ -56,9 +56,8 @@ public class ConversationWaitingService {
         polling.run(new Runnable() {
             @Override
             public void run() {
-                if (messageSDK.getNotification().getConfig().getActiveUser() == null) return;
-
                 final User user = messageSDK.getNotification().getConfig().getActiveUser();
+                if (user == null) return;
                 if (user.getUuid() == null) return;
 
                 JSONObject jsonObject = new JSONObject();

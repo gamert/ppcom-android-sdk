@@ -46,8 +46,8 @@ public class BaseAPIRequest extends BaseHttpRequest {
     protected void setup(HttpURLConnection conn) {
         super.setup(conn);
 
+        conn.addRequestProperty("Content-Type", "application/json;charset=utf-8");
         if (token.getCachedToken() != null) {
-            conn.addRequestProperty("Content-Type", "application/json;charset=utf-8");
             conn.addRequestProperty("Authorization", String.format(Locale.getDefault(), "OAuth %s", token.getCachedToken()));
         }
 

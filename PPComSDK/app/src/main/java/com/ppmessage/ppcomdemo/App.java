@@ -16,10 +16,10 @@ public class App extends Application {
 //    private static final String TEST_API_SECRET = "NjM1MTY4MWU0ZDlmYWEzMzhhZWU4ZjhjNzM5YTJkZDY2N2M0YTRjNA==";
 //    private static final String TEST_SERVER_URL = "http://192.168.0.51:8945";
 
-    private static final String TEST_APP_UUID = "28d059d1-53bd-11e6-a2a6-acbc327f19e9";
-    private static final String TEST_API_KEY = "ZWZiZDZlMWZjYThiMDI4ODUxMjdkMGQyMTE0ZDE2NzE3MDg1NzUxYg==";
-    private static final String TEST_API_SECRET = "Y2VhMmNhMDY2YjdmN2U3OTQ4MWIyNmMyMjE1MTdlZjlmMzUzYWUwZg==";
-    private static final String TEST_SERVER_URL = "http://192.168.0.204:8945";
+    private static final String TEST_APP_UUID = "d9340d1f-1749-11ea-a7be-1c872cd106a8";
+    private static final String TEST_API_KEY = "ZTY3YmU2OTNmZGRhYzQxYzZlNTFiZGE3MmFjYjFiZGNiYzU4MGRjZg==";
+    private static final String TEST_API_SECRET = "ZGJjYzNiMjA4ZmUwNDU2MzA4NGJmOTJmMzlmZTc3NWIyMGM3M2Y3Nw==";
+    private static final String TEST_SERVER_URL = "http://192.168.82.19:8945";
 
     @Override
     public void onCreate() {

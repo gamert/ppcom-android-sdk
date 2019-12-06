@@ -25,7 +25,7 @@ public class Token extends BaseHttpRequest implements IToken {
 
     @Override
     protected void setup(HttpURLConnection conn) {
-        conn.addRequestProperty("Content-Type", "application/x-www-form-urlencoded");
+        //conn.addRequestProperty("Content-Type", "application/json");//application/x-www-form-urlencoded
     }
 
     @Override

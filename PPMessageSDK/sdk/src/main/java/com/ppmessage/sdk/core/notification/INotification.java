@@ -220,21 +220,28 @@ public interface INotification {
 
     /** check configuration is valid **/
     boolean isConfigurationValid();
-
+    /**  **/
     boolean canSendMessage();
 
+    /**  **/
     void start();
 
+    /**  **/
     void stop();
 
+    /**  **/
     void sendMessage(PPMessage message);
 
+    /**  **/
     void notify(String notifyInfo);
 
+    /**  **/
     void addListener(OnNotificationEvent event);
 
+    /**  **/
     void removeListener(OnNotificationEvent event);
 
+    /**  **/
     List<OnNotificationEvent> listeners();
 
     /**

@@ -67,7 +67,7 @@ public class PPComStartupHelper {
         this.comApp = new PPComApp(sdk);
         state = StartupState.NULL;
     }
-
+    /*启动： 逐层递归APP-》USER-》会话*/
     public void startUp(final OnStartupCallback event) {
         if (state == StartupState.STARTUPING) {
             if (event != null) {
@@ -89,7 +89,7 @@ public class PPComStartupHelper {
             @Override
             public void onCompleted(App app) {
                 if (app == null) {
-                    L.w(LOG_CAN_NOT_GET_APP_INFO);
+                    L.w(LOG_CAN_NOT_GET_APP_INFO); /*服务器未启动?*/
                     publishState(StartupState.STARTUP_ERROR);
                     if (event != null) {
                         event.onError(new PPComSDKException(LOG_CAN_NOT_GET_APP_INFO));
@@ -118,7 +118,7 @@ public class PPComStartupHelper {
         state = StartupState.NULL;
         sdk.getPPMessageSDK().shutdown();
     }
-
+    //
     private void getPPComUser(final OnStartupCallback event) {
         this.comUser.getUser(new PPComUser.OnGetPPComUserEvent() {
             @Override

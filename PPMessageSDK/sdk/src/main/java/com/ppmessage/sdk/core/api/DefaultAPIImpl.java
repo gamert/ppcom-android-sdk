@@ -30,7 +30,7 @@ public class DefaultAPIImpl extends BaseAPIRequest implements IAPI {
 
     @Override
     public void createDevice(JSONObject requestParam, OnAPIRequestCompleted completedCallback) {
-        super.post("/PP_CREATE_DEVICE", requestParam, completedCallback);
+        super.post("/PPCOM_CREATE_DEVICE", requestParam, completedCallback);
     }
 
     @Override
@@ -40,7 +40,7 @@ public class DefaultAPIImpl extends BaseAPIRequest implements IAPI {
 
     @Override
     public void createAnonymousUser(JSONObject requestParam, OnAPIRequestCompleted completedCallback) {
-        super.post("/PP_CREATE_ANONYMOUS", requestParam, completedCallback);
+        super.post("/PPCOM_CREATE_ANONYMOUS", requestParam, completedCallback);
     }
 
     @Override

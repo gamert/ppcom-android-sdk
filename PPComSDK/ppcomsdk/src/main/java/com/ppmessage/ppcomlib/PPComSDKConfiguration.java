@@ -41,7 +41,7 @@ public final class PPComSDKConfiguration {
 
     final boolean enableLog;
     final boolean enableEnterKeyToSendText;
-
+    /*初始化终端用户信息: entUserUUID=用户数字账号；userEmail=如果有邮件?*/
     public PPComSDKConfiguration(PPComSDKConfiguration.Builder builder) {
         this.builder = builder;
 
@@ -70,6 +70,7 @@ public final class PPComSDKConfiguration {
         this.enableEnterKeyToSendText = builder.enableEnterKeyToSendText;
     }
 
+    //
     public void update(PPComSDKConfiguration configuration) {
 
         JSONObject jsonObject = new JSONObject();

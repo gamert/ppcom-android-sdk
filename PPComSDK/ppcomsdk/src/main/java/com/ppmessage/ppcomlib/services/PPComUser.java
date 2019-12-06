@@ -73,7 +73,7 @@ public final class PPComUser {
     public User getUser() {
         return user;
     }
-
+    //取得或创建本地用户:
     public void getUser(OnGetPPComUserEvent event) {
         if (user != null) {
             if (event != null) event.onCompleted(user);
@@ -81,7 +81,7 @@ public final class PPComUser {
         }
         createUser(event);
     }
-
+    // 创建本地用户:
     private void createUser(final OnGetPPComUserEvent event) {
         if (isAnonymousUser()) {
             createAnonymousUser(getAnonymousUserTraceUUID(), event);
@@ -94,7 +94,7 @@ public final class PPComUser {
         }
     }
 
-    // 1. create anonymous user
+    // 1. create anonymous user : ppcomTraceUUID=本地CookieUUID,可以等于用户数字账号..,
     private void createAnonymousUser(String ppcomTraceUUID, final OnGetPPComUserEvent event) {
         String traceUUID = ppcomTraceUUID;
         String appUUID = sdk.getConfiguration().getAppUUID();
@@ -105,6 +105,8 @@ public final class PPComUser {
             params.put("ppcom_trace_uuid", traceUUID);
             params.put("is_app_user", true);
             params.put("is_browser_user", false);
+            params.put("device_uuid", "1");
+            params.put("ppcom_mobile_device_uuid", "2");
             // params.put("ent_user_data", sdk.getConfiguration().getEntUserData());
             // params.put("ent_user_type", sdk.getConfiguration().getEntUserType());
         } catch (JSONException e) {
@@ -257,7 +259,7 @@ public final class PPComUser {
             }
         });
     }
-
+    /*更新用户信息: */
     private void updateUserInfo(User user) {
         JSONObject jsonObject = new JSONObject();
 
@@ -300,7 +302,7 @@ public final class PPComUser {
         });
 
     }
-
+    /*更新设备ID: */
     private void updateDevice(final User user, final OnGetPPComUserEvent event) {
         String deviceUUID = Utils.getDeviceUUID(context);
 
@@ -354,20 +356,21 @@ public final class PPComUser {
         }
         messageSDK.getAPI().updateDevice(jsonObject, null);
     }
-
+    //匿名用户
     private boolean isAnonymousUser() {
         return (sdk.getConfiguration().getUserEmail() == null
                 && sdk.getConfiguration().getEntUserUUID() == null);
     }
-
+    //实体用户
     private boolean isEntUser() {
         return (sdk.getConfiguration().getEntUserUUID() != null);
     }
-
+    //邮件用户
     private boolean isEmailUser() {
         return (sdk.getConfiguration().getUserEmail() != null);
     }
 
+    //[匿名用户]随机UUID
     public String getAnonymousUserTraceUUID() {
         SharedPreferences sp = context.getSharedPreferences(SHARED_PREF_NAME, Context.MODE_PRIVATE);
         if (sp.getString(SHARED_PREF_TRACE_ID_KEY, null) == null) {
@@ -375,7 +378,7 @@ public final class PPComUser {
         }
         return sp.getString(SHARED_PREF_TRACE_ID_KEY, null);
     }
-
+    //更新用户信息:
     public void updateUserInfo(JSONObject jsonObject) {
         if (sdk.getStartupHelper().getComUser().getUser() == null) {
             throw new PPMessageException(LOG_UPDATE_USER_INFO_ERROR);

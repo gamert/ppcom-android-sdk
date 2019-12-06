@@ -42,6 +42,7 @@ public class ConversationAgency {
         createConversation(null, userUUID, event);
     }
 
+    //创建对话:
     private void createConversation(String groupUUID, String userUUID, final OnCreateConversationEvent event) {
         PPMessageSDK messageSDK = sdk.getPPMessageSDK();
 

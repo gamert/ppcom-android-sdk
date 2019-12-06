@@ -38,7 +38,7 @@ public class App {
                 ", appName='" + appName + '\'' +
                 '}';
     }
-
+    /*处理登录返回: appName=PPMessage;appUUID=d93*/
     public static App parse(JSONObject jsonObject) {
         App app = new App();
 
